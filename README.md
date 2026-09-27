@@ -1,6 +1,6 @@
 # Inttrvu Project 3 - Predicting Sales - Regression
 
-[Banner](banner.png)
+<p align="center"> <img src="https://raw.githubusercontent.com/shrinsharma/predicting-sales-regression/main/banner.png" width="100%" alt="Inttrvu Project 3 Banner"> </p>
 
 > Capstone Project 3: End-to-end Rossmann Store Sales prediction using GradientBoosting (R² 0.6601) with 15 engineered features + FastAPI deployment.
 
