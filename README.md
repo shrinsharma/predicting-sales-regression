@@ -26,7 +26,7 @@ Engineered: 11 features from `src/feature_engineering.py` including:
 Full list saved in `models/columnName.joblib`
 
 ### 🤖 Models Compared (7)
-All models trained in `train.py` and compared in `models/model_comparison_FINAL_7_EXACT.csv`:
+All models trained in `train.py` and compared in `models/model_comparison_FINAL_7.csv`:
 
 | Model | File |
 | :--- | :--- |
@@ -56,7 +56,7 @@ All models trained in `train.py` and compared in `models/model_comparison_FINAL_
 │   ├── scalerDict.joblib
 │   ├── encoder.joblib
 │   ├── columnName.joblib
-│   └── model_comparison_FINAL_7_EXACT.csv
+│   └── model_comparison_FINAL_7.csv
 ├── src/
 │   ├── preprocessing.py
 │   ├── feature_engineering.py
@@ -88,7 +88,7 @@ pip install -r requirements.txt
 ```bash
 python train.py
 ```
-This will retrain all 7 models, save .pkl files to `models/` and generate `model_comparison_FINAL_7_EXACT.csv`
+This will retrain all 7 models, save .pkl files to `models/` and generate `model_comparison_FINAL_7.csv`
 
 ### 🌐 Run FastAPI App
 

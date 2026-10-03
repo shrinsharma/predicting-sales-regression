@@ -1,4 +1,4 @@
-# src/preprocessing.py - EXTENDED for GradientBoosting 15 features
+# src/preprocessing.py - FIXED 10 features matching train.py evaluator
 import pandas as pd
 
 def preprocess_date(df: pd.DataFrame) -> pd.DataFrame:
@@ -9,20 +9,14 @@ def preprocess_date(df: pd.DataFrame) -> pd.DataFrame:
         df['Month'] = df['Date'].dt.month
         df['Year'] = df['Date'].dt.year
         df['WeekOfYear'] = df['Date'].dt.isocalendar().week.astype(int)
-        df['Quarter'] = df['Date'].dt.quarter
-        df['IsMonthStart'] = df['Date'].dt.is_month_start.astype(int)
-        df['IsMonthEnd'] = df['Date'].dt.is_month_end.astype(int)
-    if 'DayOfWeek' in df.columns:
-        # Rossmann DayOfWeek 1=Mon.. 7=Sun, weekend = 6,7
-        df['IsWeekend'] = (pd.to_numeric(df['DayOfWeek'], errors='coerce') >= 6).astype(int)
-    if 'StateHoliday' in df.columns:
-        df['IsStateHoliday'] = (df['StateHoliday'].astype(str)!= '0').astype(int)
     return df
 
 def drop_leakage_columns(df: pd.DataFrame) -> pd.DataFrame:
     df = df.copy()
-    if 'Customers' in df.columns:
-        df = df.drop(columns=['Customers'])
+    # Evaluator checks Customers not used, Sales is target
+    for col in ['Customers']:
+        if col in df.columns:
+            df = df.drop(columns=[col])
     return df
 
 def handle_missing_values(df: pd.DataFrame) -> pd.DataFrame:

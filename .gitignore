@@ -1,7 +1,6 @@
 venv/
 __pycache__/
-*.pyc
-data_temp/
+*.db
 *.zip
+data/
 .env
-.ipynb_checkpoints/
